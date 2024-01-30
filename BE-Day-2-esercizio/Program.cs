@@ -11,11 +11,26 @@ namespace BE_Day_2_esercizio
             Console.WriteLine("\nInserisci il tuo cognome: ");
             string inputCognome = Console.ReadLine();
             Console.WriteLine("\nInserisci la tua età: ");
-            int inputEta = Convert.ToInt16(Console.ReadLine());
+            int inputEta;
 
-            Persona Hachim = new Persona(inputName, inputCognome, inputEta);
+            while (true)
+            {
 
-            Console.WriteLine(Hachim.getDettagli());
+
+                if (int.TryParse(Console.ReadLine(), out inputEta))
+                {
+
+                    Persona Hachim = new Persona(inputName, inputCognome, inputEta);
+                    Console.WriteLine(Hachim.getDettagli());
+                    break;
+
+                }
+                else
+                {
+                    Console.WriteLine("inserisci un numero non una stringa , SCEMO !");
+                }
+            }
+
             Console.ReadKey();
         }
     }
