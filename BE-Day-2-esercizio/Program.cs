@@ -16,8 +16,6 @@ namespace BE_Day_2_esercizio
             while (!int.TryParse(Console.ReadLine(), out inputEta))
             {
                 Console.WriteLine("inserisci un numero non una stringa , SCEMO !");
-
-
             }
             Persona Hachim = new Persona(inputName, inputCognome, inputEta);
             Console.WriteLine(Hachim.getDettagli());
